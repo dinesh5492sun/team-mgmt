@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -23,22 +25,39 @@ public class EmpAdvanced  implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ID")
+	private Long Id;
+	
+	//@Id
 	@OneToOne
 	@Cascade(value={org.hibernate.annotations.CascadeType.ALL})
 	@JoinColumn(name="EMPLOYEE_ID")
 	private EmpBasic employeeId;
 	
 	@Column(name = "EMPLOYEE_ADDRESS")
-	private String employeeAddress;
+	private String address;
 	
 	@Column(name = "EMPLOYEE_MAL")
-	private String employeeMal;
+	private String mal;
 	
 	@Column(name = "EMPLOYEE_PRIMARY_SKILL")
-	private String employeePrimarySkill;
+	private String primarySkill;
 	
 	@Column(name = "EMPLOYEE_PROFICIENCY")
-	private String employeeProficiency;
+	private String proficiency;
+
+	public EmpAdvanced(EmpBasic employeeId, String address, String mal, String primarySkill, String proficiency) {
+		super();
+		this.employeeId = employeeId;
+		this.address = address;
+		this.mal = mal;
+		this.primarySkill = primarySkill;
+		this.proficiency = proficiency;
+	}
+	
+	
 	
 }

@@ -21,15 +21,15 @@ public class Project implements Serializable {
 	
 	@Id
 	@Column(name = "PROJECT_ID")
-	private Long projectId;
+	private Long ID;
 	
 	@Column(name = "PROJECT_NAME")
-	private String projectName;
+	private String name;
 	
 	@Column(name = "PROJECT_SHORT_NAME")
-	private String projectShortName;
+	private String ShortName;
 	
 	@Column(name = "PROJECT_DESCRIPTION")
-	private String project_description;
+	private String description;
 	
 }

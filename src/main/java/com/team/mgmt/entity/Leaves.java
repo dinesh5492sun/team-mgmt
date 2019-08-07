@@ -27,9 +27,9 @@ public class Leaves  implements Serializable {
 	private String levelName;
 	
 	@Column(name = "LEAVE_SHORTNAME")
-	private String  leaveShortName;
+	private String  shortName;
 	
 	@Column(name = "LEAVE_DESCRIPTION")
-	private String  leaveDescription
+	private String  description
 ;
 }

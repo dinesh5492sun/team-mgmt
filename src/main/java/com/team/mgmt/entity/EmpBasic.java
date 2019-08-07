@@ -21,24 +21,24 @@ public class EmpBasic implements Serializable  {
 
 	@Id
 	@Column(name = "EMPLOYEE_ID")
-	private Long employeeId;
+	private Long ID;
 	
 	@Column(name = "EMPLOYEE_FIRST_NAME")
-	private String employeeFirstName;
+	private String firstName;
 	
 	@Column(name = "EMPLOYEE_MIDDLE_NAME")
-	private String employeeMiddleName;
+	private String middleName;
 	
 	@Column(name = "EMPLOYEE_LAST_NAME")
-	private String employeeLastName;
+	private String lastName;
 	
 	@Column(name = "EMPLOYEE_EMAIL")
-	private String employeeEmail;
+	private String email;
 	
 	@Column(name = "EMPLOYEE_PHONE")
-	private String employeePhone;
+	private String phone;
 	
 	@Column(name = "EMPLOYEE_GENDER")
-	private String employeeGender;
+	private String gender;
 
 }

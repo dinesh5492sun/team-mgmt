@@ -28,7 +28,7 @@ public class EmpLeaves implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
-	private Long Id;
+	private Long leaveId;
 	
 	
 	@OneToOne
