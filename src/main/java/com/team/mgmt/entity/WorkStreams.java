@@ -25,8 +25,8 @@ public class WorkStreams  implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name = "WORKSTREAM_ID")
-	private Long workstreamID;
+	@Column(name = "WORKSTREAM_ID",nullable = false, length = 50)
+	private String workstreamID;
 	
 	@Column(name = "WORKSTREAM_NAME")
 	private String workstreamName;
@@ -35,8 +35,20 @@ public class WorkStreams  implements Serializable{
 	private String  workstreamParentID;
 	
 	@OneToOne
-	@Cascade(value={org.hibernate.annotations.CascadeType.ALL})
+	//@Cascade(value={org.hibernate.annotations.CascadeType.ALL})
 	@JoinColumn(name="PROJECT_ID")
 	private Project projectId;
+
+	public WorkStreams(String workstreamID, String workstreamName, String workstreamParentID, Project projectId) {
+		super();
+		this.workstreamID = workstreamID;
+		this.workstreamName = workstreamName;
+		this.workstreamParentID = workstreamParentID;
+		this.projectId = projectId;
+	}
+	public WorkStreams() {
+		super();
+	}
+	
 	
 }

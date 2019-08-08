@@ -1,6 +1,5 @@
 package com.team.mgmt.controller;
 
-import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -15,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.team.mgmt.model.JwtRequest;
-import com.team.mgmt.model.JwtResponse;
+import com.team.mgmt.response.JwtRequest;
+import com.team.mgmt.response.JwtResponse;
 import com.team.mgmt.util.JwtTokenUtil;
 
 @RestController

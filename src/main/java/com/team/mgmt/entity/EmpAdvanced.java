@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,7 +33,7 @@ public class EmpAdvanced  implements Serializable {
 	private Long Id;
 	
 	//@Id
-	@OneToOne
+	@OneToOne(fetch = FetchType.EAGER)
 	@Cascade(value={org.hibernate.annotations.CascadeType.ALL})
 	@JoinColumn(name="EMPLOYEE_ID")
 	private EmpBasic employeeId;
@@ -56,6 +57,9 @@ public class EmpAdvanced  implements Serializable {
 		this.mal = mal;
 		this.primarySkill = primarySkill;
 		this.proficiency = proficiency;
+	}
+
+	public EmpAdvanced() {
 	}
 	
 	

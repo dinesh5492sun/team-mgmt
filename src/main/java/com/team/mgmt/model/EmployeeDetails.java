@@ -33,6 +33,8 @@ public class EmployeeDetails /*implements Serializable*/ {
 	private String primarySkill;
 	//@JsonProperty("proficiency")
 	private String proficiency;
+	
+	
 
 	//@JsonProperty("employeeId")
 	public Long getEmployeeId() {
@@ -141,6 +143,22 @@ public class EmployeeDetails /*implements Serializable*/ {
 
 	//@JsonProperty("proficiency")
 	public void setProficiency(String proficiency) {
+		this.proficiency = proficiency;
+	}
+
+	public EmployeeDetails(Long employeeId, String firstName, String middleName, String lastName, String email,
+			String phone, String gender, String address, String mal, String primarySkill, String proficiency) {
+		super();
+		this.employeeId = employeeId;
+		this.firstName = firstName;
+		this.middleName = middleName;
+		this.lastName = lastName;
+		this.email = email;
+		this.phone = phone;
+		this.gender = gender;
+		this.address = address;
+		this.mal = mal;
+		this.primarySkill = primarySkill;
 		this.proficiency = proficiency;
 	}
 

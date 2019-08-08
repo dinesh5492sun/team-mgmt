@@ -17,5 +17,13 @@ public class EmployeeMapper {
 		emp.setGender(empDetails.getGender());
 		return new EmpAdvanced(emp,empDetails.getMal(),empDetails.getAddress(),empDetails.getPrimarySkill(),empDetails.getProficiency());
 	}
+	
+	public static EmployeeDetails convertToEmpAdvancedWithEmployeeDetails(EmpAdvanced empAdvanced) {
+		return new EmployeeDetails(empAdvanced.getEmployeeId().getID(),empAdvanced.getEmployeeId().getFirstName(),
+				empAdvanced.getEmployeeId().getMiddleName(),empAdvanced.getEmployeeId().getLastName(),
+				empAdvanced.getEmployeeId().getEmail(),empAdvanced.getEmployeeId().getPhone(),empAdvanced.getEmployeeId().getGender(),
+				empAdvanced.getAddress(),empAdvanced.getMal(),empAdvanced.getPrimarySkill(),
+				empAdvanced.getProficiency());
+	}
 
 }

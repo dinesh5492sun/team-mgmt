@@ -6,12 +6,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
-import com.team.mgmt.entity.EmpAdvanced;
-import com.team.mgmt.entity.EmpBasic;
+import com.team.mgmt.entity.Project;
+import com.team.mgmt.entity.WorkStreams;
 
-public interface EmpAdvancedRepository extends JpaRepository<EmpAdvanced, Long> {
+public interface WorkStreamsRepository extends JpaRepository<WorkStreams, String> {
+
 	@Transactional
 	@Modifying
-	@Query("DELETE FROM EmpAdvanced a WHERE a.employeeId= ?1")
-	void deleteEmpDetails(EmpBasic empBasic);
+	@Query("DELETE FROM WorkStreams a WHERE a.projectId= ?1")
+	void deleteProjectDetails(Project project);
 }
