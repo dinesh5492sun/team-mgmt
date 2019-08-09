@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "234f5f68-f99e-4009-b44b-9585c22592ee",
+		"name": "team-mgmt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET ALL Emloyee Details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXZhaW51c2UiLCJleHAiOjE1NjUzNDg3NzQsImlhdCI6MTU2NTMzMDc3NH0.Jpbh7Uk-J3rnenwK-ur92aDrvBAy3nJ6Uwmd6ds-ZxxaIHiZNR6FfFtnNXVEnqA9EKodqP0QnW2EqGACgkYJAw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8888/employee/allEmployeeDetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"employee",
+						"allEmployeeDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Employee Details",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXZhaW51c2UiLCJleHAiOjE1NjUzNDg3NzQsImlhdCI6MTU2NTMzMDc3NH0.Jpbh7Uk-J3rnenwK-ur92aDrvBAy3nJ6Uwmd6ds-ZxxaIHiZNR6FfFtnNXVEnqA9EKodqP0QnW2EqGACgkYJAw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\t\n   \n\t\t\"employeeId\" :11645785,\n\t\t\"firstName\":\"Dinzy\",\n\t\t\"middleName\":\"Babu\",\n\t\t\"lastName\":\"Mudadla\",\n\t\t\"email\":\"dinesh.babu.mudadla@accenture.com\",\n\t\t\"phone\":\"8855026237\",\n\t\t\"gender\":\"Male\",\n\t\t\"address\":\"129,yash raj apts\",\n\t\t\"mal\":\"\",\n\t\t\"primarySkill\":\"Spring MVC\",\n\t\t\"proficiency\":\"Level 10\"\n\n\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/employee/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"employee",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Authorization Request Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"javainuse\",\n\t\"password\":\"password\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Employee Details",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXZhaW51c2UiLCJleHAiOjE1NjUzNDg3NzQsImlhdCI6MTU2NTMzMDc3NH0.Jpbh7Uk-J3rnenwK-ur92aDrvBAy3nJ6Uwmd6ds-ZxxaIHiZNR6FfFtnNXVEnqA9EKodqP0QnW2EqGACgkYJAw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8888/employee/delete/11645785",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"employee",
+						"delete",
+						"11645785"
+					],
+					"query": [
+						{
+							"key": "employeeId",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Project Name",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXZhaW51c2UiLCJleHAiOjE1NjUzNDg3NzQsImlhdCI6MTU2NTMzMDc3NH0.Jpbh7Uk-J3rnenwK-ur92aDrvBAy3nJ6Uwmd6ds-ZxxaIHiZNR6FfFtnNXVEnqA9EKodqP0QnW2EqGACgkYJAw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\t\n\t\t\"id\" :\"TI-SDP2\",\n\t\t\"name\":\"Telecome Itilia\",\n\t\t\"shortName\":\"SDP\",\n\t\t\"description\":\"It has lot of project\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8888/project/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"project",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add workStream ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXZhaW51c2UiLCJleHAiOjE1NjUzNDg3NzQsImlhdCI6MTU2NTMzMDc3NH0.Jpbh7Uk-J3rnenwK-ur92aDrvBAy3nJ6Uwmd6ds-ZxxaIHiZNR6FfFtnNXVEnqA9EKodqP0QnW2EqGACgkYJAw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"workstreamID\" :\"IGW2.0\",\n\t\"workstreamName\":\"Integrated Gateway\",\n\t\"workstreamParentID\":\"SDP\",\n\t\"projectId\":\"TI-SDP2\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/project/workStream/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"project",
+						"workStream",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete project",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXZhaW51c2UiLCJleHAiOjE1NjUyODYyMDUsImlhdCI6MTU2NTI2ODIwNX0.nWlUSIgX1Z3BMY3z7iY2BeKMJDHWTsuA0aC8Ew9aZLvkj9sCQ5iNl-pWvaahLRb1jDoE-J-RYzq67CPmWykKgA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8888/project/delete/TI-SDP",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"project",
+						"delete",
+						"TI-SDP"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

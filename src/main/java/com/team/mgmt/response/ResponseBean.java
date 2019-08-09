@@ -1,5 +1,7 @@
 package com.team.mgmt.response;
 
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -14,7 +16,7 @@ import lombok.Data;
 public class ResponseBean {
 	private int resultCode;
 	private String resultMessage;
-	private EmployeeDetails employeeDetails;
+	private List<EmployeeDetails>  employeeDetails;
 	
 	
 }

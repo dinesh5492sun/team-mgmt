@@ -1,5 +1,8 @@
 package com.team.mgmt.mapper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.team.mgmt.entity.EmpAdvanced;
 import com.team.mgmt.entity.EmpBasic;
 import com.team.mgmt.model.EmployeeDetails;
@@ -18,12 +21,19 @@ public class EmployeeMapper {
 		return new EmpAdvanced(emp,empDetails.getMal(),empDetails.getAddress(),empDetails.getPrimarySkill(),empDetails.getProficiency());
 	}
 	
-	public static EmployeeDetails convertToEmpAdvancedWithEmployeeDetails(EmpAdvanced empAdvanced) {
-		return new EmployeeDetails(empAdvanced.getEmployeeId().getID(),empAdvanced.getEmployeeId().getFirstName(),
-				empAdvanced.getEmployeeId().getMiddleName(),empAdvanced.getEmployeeId().getLastName(),
-				empAdvanced.getEmployeeId().getEmail(),empAdvanced.getEmployeeId().getPhone(),empAdvanced.getEmployeeId().getGender(),
-				empAdvanced.getAddress(),empAdvanced.getMal(),empAdvanced.getPrimarySkill(),
-				empAdvanced.getProficiency());
+	public static ArrayList<EmployeeDetails> convertToEmpAdvancedWithEmployeeDetails(List<EmpAdvanced> empAdvanced) {
+		
+		ArrayList<EmployeeDetails> empDetails=new ArrayList<EmployeeDetails>();
+
+		empAdvanced.stream().forEach(i->{
+			empDetails.add(new EmployeeDetails(i.getEmployeeId().getID(),i.getEmployeeId().getFirstName(),
+					i.getEmployeeId().getMiddleName(),i.getEmployeeId().getLastName(),
+					i.getEmployeeId().getEmail(),i.getEmployeeId().getPhone(),i.getEmployeeId().getGender(),
+					i.getAddress(),i.getMal(),i.getPrimarySkill(),
+					i.getProficiency()));
+		});
+		
+		return empDetails;
 	}
 
 }

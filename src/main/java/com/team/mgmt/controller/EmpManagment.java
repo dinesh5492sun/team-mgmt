@@ -1,5 +1,6 @@
 package com.team.mgmt.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,10 +44,11 @@ public class EmpManagment {
 	@PostMapping("/add")
 	public ResponseEntity<ResponseBean> addEmployee(@RequestBody EmployeeDetails employeeDetails) {
 	
-		
+		System.out.println("employeeDetails 1"+employeeDetails);
 		HttpStatus httpStatus = HttpStatus.OK;
 		ResponseBean response=new ResponseBean();
 		EmpAdvanced empAdvanced = EmployeeMapper.convertToEmpAdvancedWithEmpBasic(employeeDetails);
+		System.out.println("empAdvanced 2"+empAdvanced);
 		try {
 			employeeService.addEmployee(empAdvanced);
 			response.setResultCode(200);
@@ -84,10 +86,11 @@ public class EmpManagment {
 		ResponseBean response=new ResponseBean();
 		try {
 			List<EmpAdvanced> empDetails=employeeService.getAllEmployeeDetails();
-		//	EmployeeDetails employeeDetails = EmployeeMapper.convertToEmpAdvancedWithEmployeeDetails(employeeDetails);
+			System.out.println(empDetails);
+			ArrayList<EmployeeDetails> employeeDetails = EmployeeMapper.convertToEmpAdvancedWithEmployeeDetails(empDetails);
 			response.setResultCode(200);
 			response.setResultMessage("ok");
-		//	response.setEmployeeDetails(employeeDetails);
+			response.setEmployeeDetails(employeeDetails);
 		} catch (Exception e) {
 			System.out.println("=>"+e);
 			response.setResultCode(-1);

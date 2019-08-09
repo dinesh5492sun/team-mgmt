@@ -19,7 +19,7 @@ public class EmployeeRepoImp implements EmployeeRepo{
 	
 	@Override
 	public void addEmployee(EmpAdvanced empAdvanced){
-		
+		System.out.println("before save =>"+empAdvanced);
 		empAdvancedRepository.save(empAdvanced);
 	}
 
