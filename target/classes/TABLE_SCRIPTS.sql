@@ -105,3 +105,12 @@ CREATE TABLE `work_streams` (
   PRIMARY KEY (`workstream_id`),
   KEY `FK62ry5rplgjpc9pm80w5nddpjq` (`project_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `login_details` (
+  `username` varchar(50) NOT NULL,
+  `id` bigint(20) DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
