@@ -1,13 +1,12 @@
 package com.team.mgmt.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.team.mgmt.entity.EmpAdvanced;
-import com.team.mgmt.repository.EmployeeRepo;
+import com.team.mgmt.repositoryImpl.EmployeeRepo;
 
 @Service
 public class EmployeeServiceImp implements EmployeeService {

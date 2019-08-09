@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.team.mgmt.entity.Project;
 import com.team.mgmt.entity.WorkStreams;
-import com.team.mgmt.repository.ProjectRepo;
+import com.team.mgmt.repositoryImpl.ProjectRepo;
 
 @Service
 public class ProjectServiceImpl implements ProjectService {
