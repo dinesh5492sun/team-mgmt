@@ -40,10 +40,10 @@ CREATE TABLE `emp_leaves` (
 
 
 CREATE TABLE `project` (
-  `project_id` bigint(20) NOT NULL,
-  `project_name` varchar(255) DEFAULT NULL,
+  `project_id` varchar(50) NOT NULL,
   `project_short_name` varchar(255) DEFAULT NULL,
   `project_description` varchar(255) DEFAULT NULL,
+  `project_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`project_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -95,4 +95,13 @@ CREATE TABLE `forecast_allocation` (
   KEY `FKf3jmhogfblgisfwc4lm3e5n8c` (`employee_id`),
   KEY `FKl9uxs59mpht11hs6774d3368j` (`forecast_id`),
   KEY `FKc6oxvg93of1405y6wgm8o50qy` (`workstream_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `work_streams` (
+  `workstream_id` varchar(50) NOT NULL,
+  `workstream_name` varchar(255) DEFAULT NULL,
+  `workstream_parent_id` varchar(255) DEFAULT NULL,
+  `project_id` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`workstream_id`),
+  KEY `FK62ry5rplgjpc9pm80w5nddpjq` (`project_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
