@@ -86,7 +86,6 @@ public class EmpManagment {
 		ResponseBean response=new ResponseBean();
 		try {
 			List<EmpAdvanced> empDetails=employeeService.getAllEmployeeDetails();
-			System.out.println(empDetails);
 			ArrayList<EmployeeDetails> employeeDetails = EmployeeMapper.convertToEmpAdvancedWithEmployeeDetails(empDetails);
 			response.setResultCode(200);
 			response.setResultMessage("ok");

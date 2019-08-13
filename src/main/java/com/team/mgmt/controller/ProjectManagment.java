@@ -28,7 +28,7 @@ public class ProjectManagment {
 	
 	@PostMapping("/add")
 	public ResponseEntity<ResponseBean> addProject(@RequestBody ProjectDetails projectDetails) {
-		System.out.println("projectDetails =>"+projectDetails);
+		
 		HttpStatus httpStatus = HttpStatus.OK;
 		ResponseBean response=new ResponseBean();
 		Project project = ProjectMapper.convertToprojectDetailsToproject(projectDetails);
@@ -69,7 +69,6 @@ public class ProjectManagment {
 		HttpStatus httpStatus = HttpStatus.OK;
 		ResponseBean response=new ResponseBean();
 		WorkStreams workStreams = ProjectMapper.convertToWorkStremsDetailsToWorkStream(workStreamDetail);
-		System.out.println("project =>"+workStreams);
 		try {
 			projectService.addWorkStreams(workStreams);
 			response.setResultCode(200);
